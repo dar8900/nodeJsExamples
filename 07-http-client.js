@@ -1,7 +1,7 @@
 const url = process.argv[2];
 const httpClient = require('http');
 
-httpClient.get(url, (response) =>
+const httpC = httpClient.get(url, (response) =>
 {
   response.setEncoding('utf8');
   response.on('data', (data) =>
@@ -12,7 +12,8 @@ httpClient.get(url, (response) =>
   {
     console.log(error);
   });
-}).on('error', (error) =>
+});
+httpC.on('error', (error) =>
   {
     console.log(error);
   });
